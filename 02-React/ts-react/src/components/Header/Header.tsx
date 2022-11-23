@@ -1,6 +1,8 @@
+import './Header.css'
+
 export const Header = () => {
   return (
-    <div>
+    <div className='header'>
        App Bank
     </div>
   )
