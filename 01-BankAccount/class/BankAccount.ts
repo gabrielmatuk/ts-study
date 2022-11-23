@@ -2,6 +2,7 @@ export abstract class BankAccount {
     private name: string
     accountNumber: number
     balance: number = 0
+    private status: boolean = true
 
     constructor(name: string, accountNumber: number){
         this.name = name
@@ -18,7 +19,9 @@ export abstract class BankAccount {
     }
 
     deposit = (): void => {
-        console.log('Você depositou')
+        if(this.validateStatus()){
+            console.log('Você depositou')
+        }
     }
 
     withdraw = (): void => {
@@ -27,5 +30,13 @@ export abstract class BankAccount {
     
     getBalance = (): void => {
         console.log(this.balance)
+    }
+
+    private validateStatus = (): boolean => {
+        if(this.status) {
+            return this.status
+        }
+
+        throw new Error('Conta inválida')
     }
 }
