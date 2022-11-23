@@ -13,6 +13,10 @@ export abstract class BankAccount {
         console.log('Nome alterado com sucesso')
     }
 
+    getName = (): string => {
+        return this.name
+    }
+
     deposit = (): void => {
         console.log('Você depositou')
     }
