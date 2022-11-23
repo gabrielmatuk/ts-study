@@ -1,3 +1,4 @@
+import {Input} from '@chakra-ui/react'
 interface IInputs  {
     label: string,
     htmlFor: string,
@@ -12,7 +13,7 @@ export const Inputs = ( {id, label, htmlFor, type}: IInputs) => {
     <label htmlFor={htmlFor}>
         {label}
     </label>
-    <input id={id} type={type}/>
+    <Input id={id} type={type}></Input>
     </div>
     </>
   

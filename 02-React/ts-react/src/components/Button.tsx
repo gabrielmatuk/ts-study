@@ -1,8 +1,10 @@
+import {Button}  from '@chakra-ui/react'
 
-export const Button = () => {
+
+export const ButtonComponent = () => {
   return (
     <>
-    <button>Entrar</button>
+    <Button>Entrar</Button>
     </>
     )
 }
