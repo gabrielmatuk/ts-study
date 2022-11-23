@@ -5,8 +5,6 @@ interface ICard {
 }
 
 export const Card = ({id, paragraph, details}: ICard) => {
-
-    console.log(id)
   return (
     <div>
         <h1> Componente card {id} </h1>
