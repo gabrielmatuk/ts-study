@@ -1,3 +1,4 @@
+import Button from './components/Button';
 import Inputs from './components/Inputs';
 import { Layout } from './components/Layout';
 
@@ -7,7 +8,8 @@ function App() {
     <Layout>
       <h1>Faça o Login:</h1>
       <Inputs id='emailInput' label='Email:' htmlFor='emailInput'></Inputs>
-      <Inputs id='passwordInpput' label='Senha:' htmlFor='passwordInpput'></Inputs>
+      <Inputs id='passwordInpput' label='Senha:' htmlFor='passwordInpput' type='password'></Inputs>
+      <Button />
     </Layout>
   </>
   );
