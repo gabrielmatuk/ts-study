@@ -1,17 +1,19 @@
 import {ButtonComponent} from './components/Button';
 import {Inputs} from './components/Inputs';
-import { Layout } from './components/Layout';
 import { ChakraProvider, Box,Center } from '@chakra-ui/react'
+import {Layout} from './components/Layout';
 
 
 function App() {
   return (
     <>
     <ChakraProvider>
+      <Layout>
         <Box minHeight='100vh' backgroundColor='#4d4d4d' padding='25px'>
-          <Box backgroundColor='#fafafa' borderRadius='25px' padding='15px'>
+            
+          <Box backgroundColor='#fafafa' borderRadius='25px' padding='15px' >
+         
           <Center>
-
           <h1>Faça o Login:</h1>
           </Center>
 
@@ -22,6 +24,8 @@ function App() {
             </Center>
           </Box>
         </Box>
+      </Layout>
+
     </ChakraProvider>
     </>
   );

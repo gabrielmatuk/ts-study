@@ -1,3 +1,9 @@
 .header {
-    background-color: orange;
+    background-color: #4d4d4d;
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

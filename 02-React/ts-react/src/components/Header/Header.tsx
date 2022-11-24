@@ -1,9 +1,10 @@
 import './Header.css'
+import logo from './ronaldo.jpeg'
 
 export const Header = () => {
   return (
     <div className='header'>
-       App Bank
+      <img className='logo' src={logo} alt='Ronaldo Fenomeno'/>
     </div>
   )
 }
