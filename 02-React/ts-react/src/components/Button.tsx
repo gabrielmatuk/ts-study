@@ -5,7 +5,7 @@ export const ButtonComponent = () => {
 
   return (
     <>
-    <Button size='lg' colorScheme='blackAlpha' paddingTop='5px' marginTop='15px' width='60%' >Entrar</Button>
+    <Button size='lg' colorScheme='green' paddingTop='5px' marginTop='15px' width='25%' >Entrar</Button>
     </>
     )
 }

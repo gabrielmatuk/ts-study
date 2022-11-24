@@ -1,19 +1,20 @@
 import {Input} from '@chakra-ui/react'
 interface IInputs  {
     label: string,
-    htmlFor: string,
+    htmlFor?: string,
     id:string
     type?: string
+    placeholder: string
 }
 
-export const Inputs = ( {id, label, htmlFor, type}: IInputs) => {
+export const Inputs = ( {id, label, htmlFor, type, placeholder}: IInputs) => {
   return (
     <>
     <div>
     <label htmlFor={htmlFor}>
         {label}
     </label>
-    <Input id={id} type={type}></Input>
+    <Input id={id} type={type} placeholder={placeholder}></Input>
     </div>
     </>
   
