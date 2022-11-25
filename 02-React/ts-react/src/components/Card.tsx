@@ -1,6 +1,6 @@
 import { Box,Center } from '@chakra-ui/react'
-// import { login } from '../services/login'
-// import { ButtonComponent } from './Button'
+import { login } from '../services/login'
+import { ButtonComponent } from './Button'
 import {InputsEmail, InputsPassword} from './Inputs'
 import {api} from '../api'
 import React from 'react'
@@ -28,18 +28,18 @@ export const Card = () => {
 
   return (
     <Box backgroundColor='#fafafa' borderRadius='25px' padding='15px' >
-      {userData === null || userData === undefined ? <h1>Loading ... </h1> : <h1>Informações carregadas</h1>}
+      {/* {userData === null || userData === undefined ? <h1>Loading ... </h1> : <h1>Informações carregadas</h1>} */}
     <Center>
     <h1>Faça o Login:</h1>
     <p>
-    {userData?.email}
+    {userData?.name}
     </p>
     </Center>
 
     <InputsEmail id='emailInput' label='Email:' htmlFor='emailInput' placeholder='Email'></InputsEmail>
     <InputsPassword id='passwordInpput' label='Senha:' htmlFor='passwordInpput' type='password' placeholder='Password'></InputsPassword>
        <Center>
-        {/* <ButtonComponent onClick={login('gabrielmatuk@.com')}/> */}
+        <ButtonComponent onClick={()=> {login('gabriel@matuk.com')}}/>
       </Center>
     </Box>
   )

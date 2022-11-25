@@ -8,9 +8,7 @@ interface IDButton {
 export const ButtonComponent = ({onClick}: IDButton) => {
 
   return (
-    <>
     <Button onClick={onClick} size='lg' colorScheme='green' paddingTop='5px' marginTop='15px' width='25%' >Entrar</Button>
-    </>
     )
 }
 

@@ -1,18 +1,25 @@
-import React from 'react';
-import { ChakraProvider, Box } from '@chakra-ui/react'
-import {Layout} from './components/Layout';
-import {Card} from './components/Card'
+
+import { BrowserRouter, Routes,Route } from 'react-router-dom';
+import Conta from './pages/Conta';
+import Home from './pages/Home';
+import Padrao from './pages/Padrao';
 function App() {
   
   return (
-    <ChakraProvider>
-      <Layout>
-        <Box minHeight='100vh' backgroundColor='#4d4d4d' padding='25px'>
-          <Card/>
-        </Box>
-      </Layout>
+    <BrowserRouter>
+    <Routes>
+    <Route path='/' element={
+      <Home />
+    }/>
+    <Route path='*' element={
+      <Padrao />
+    }/>
+    <Route path='/conta' element={
+      <Conta/>
+    }/>
+    </Routes>
+    </BrowserRouter>
 
-    </ChakraProvider>
   );
 }
 
