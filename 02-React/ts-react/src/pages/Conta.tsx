@@ -3,7 +3,7 @@ import {useParams, useNavigate} from 'react-router-dom'
 import CardInfo from "../components/CardInfo"
 import React from "react"
 import { api } from "../api"
-import { AppContext } from "../App"
+import { AppContext } from "../components/AppContext"
 
 interface userData {
     email: string
@@ -16,8 +16,12 @@ interface userData {
 const Conta = () => {
     const [userData, setUserData] = React.useState<null | userData>()
     const {id} = useParams()
-  
-    const context = React.useContext(AppContext)
+
+    const navigate = useNavigate()
+
+    const {isLoggedIn} = React.useContext(AppContext)
+
+    !isLoggedIn && navigate('/')
 
     React.useEffect(()=>{
       const getData = async() => {
@@ -29,7 +33,6 @@ const Conta = () => {
     
     const actualData = new Date()
 
-    const navigate = useNavigate()
     if(userData && id !==  userData.id){
       navigate('/')
     }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppContext } from '../../App'
+import { AppContext } from '../AppContext'
 import './Header.css'
 import logo from './ronaldo.jpeg'
 
