@@ -1,7 +1,8 @@
 const conta = {
+    id: '1',
     email: 'gabriel.matuk@eteg.com.br',
     password: '123456',
-    name:'API - EXAMPLE',
+    name:'Gabriel',
     balance: 2000.00,
 }
 
