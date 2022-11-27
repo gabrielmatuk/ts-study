@@ -6,7 +6,7 @@ const appBank = {
     login: false
 }
 
-export const getAllLocalStorage = () => {
+export const getAllLocalStorage = (): string | null => {
     return localStorage.getItem('appbank')
 }
 

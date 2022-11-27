@@ -7,6 +7,7 @@ import { ButtonComponent } from '../components/Button'
 import Card from '../components/Card'
 import { Inputs } from '../components/Inputs'
 import { login} from '../services/login'
+import { changeLocalStorage } from '../services/storage'
 
 
 
@@ -18,13 +19,13 @@ const Home = () => {
 
   const validateUser = async(email: string) => {
     const loggedIn = await login(email)
-
   
     if(!loggedIn){
       return alert('Email inválido')
     }
     setIsLoggedIn(true)
-    navigate('conta/1')
+    changeLocalStorage({login: true})
+    navigate('/conta/1')
   }
   return (
       <Box minHeight='100vh' padding='25px'>

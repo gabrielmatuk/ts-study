@@ -36,18 +36,23 @@ const Conta = () => {
     if(userData && id !==  userData.id){
       navigate('/')
     }
+    console.log(typeof userData)
   return (
     <Center>
         {/* {userData === null || userData === undefined ? <h1>Loading ... </h1> : <h1>Informações carregadas</h1>} */}
 
         <SimpleGrid column={2} spacing={8} paddingTop={16}>
           {
-            userData === undefined || userData === null ? (<Center>
-              <Spinner size='xl' color="white"/>
-            </Center>): (<>
+            userData === undefined || userData === null ? 
+            (
+            <Center>
+            <Spinner size='xl' color="white"/>
+            </Center>): (
+            <>
               <CardInfo mainContent={`Bem vindo ${userData?.name}`} content={`${actualData.getDay()}/${actualData.getMonth()}/${actualData.getFullYear()} ${actualData.getHours()}:${actualData.getMinutes()}`}/>
               <CardInfo mainContent="Saldo" content={`R$: ${userData.balance}`}></CardInfo>
-              </>)
+            </>
+            )
             
           }
            
