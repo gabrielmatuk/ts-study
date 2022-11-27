@@ -21,7 +21,7 @@ const Home = () => {
 
   
     if(!loggedIn){
-      alert('Email inválido')
+      return alert('Email inválido')
     }
     setIsLoggedIn(true)
     navigate('conta/1')
