@@ -4,9 +4,12 @@ import { BrowserRouter } from 'react-router-dom';
 import Layout from './components/Layout';
 import { AppContextProvider } from './components/AppContext';
 import MainRoutes from './routes';
+import { changeLocalStorage, createLocalStorage } from './services/storage';
 
 function App() {
-  
+
+  createLocalStorage();
+  changeLocalStorage({login: true})
   return (
     <BrowserRouter>
       <AppContextProvider>
