@@ -10,16 +10,25 @@ export class UserController {
         this.userService = userService
     }
     
-    createUser =(req:Request, res: Response) => {
-        if( !req.body || !req.body.email || !req.body.name ){
+    createUser = (req:Request, res: Response) => {
+        if( !req.body || !req.body.email || !req.body.name || !req.body.password ){
             return res.status(400).json({error: "missing params on create user"})
         }
-        const { name, email } = req.body
-        this.userService.createUser(name, email)
+        const { name, email, password } = req.body
+        this.userService.createUser(name, email, password)
         return res.status(200).json({msg: true})
     }
-    getAllUsers = (_: Request, res:Response) =>{
-        const users = this.userService.getAllUsers()
-        return res.status(200).json(users)
+    getUser = (req: Request, res:Response) => {
+        if(!req.params || req.params.id) {
+            return res.status(400).json({error: "missing params on create user"})
+        }
+        const {id} = req.params 
+        this.userService.getUser(id)
+        return res.status(200)
+    }
+
+    deleteUser = (req: Request, res:Response) => {
+        const user = req.body
+        return res.status(200).json({msg: 'user deleted'})
     }
 }
