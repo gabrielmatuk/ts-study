@@ -18,13 +18,22 @@ export class UserController {
         this.userService.createUser(name, email, password)
         return res.status(200).json({msg: true})
     }
-    getUser = (req: Request, res:Response) => {
-        if(!req.params || req.params.id) {
+
+    getUser = async(req: Request, res:Response) => {
+        if(!req.params || !req.params.userId) {
             return res.status(400).json({error: "missing params on create user"})
         }
-        const {id} = req.params 
-        this.userService.getUser(id)
-        return res.status(200)
+        const {userId} = req.params 
+        try{
+            this.userService.getUser(userId)
+            const user = await this.userService.getUser(userId)   
+    
+            return res.status(200).json({userId: user?.user_id, name: user?.name, email: user?.email})
+
+        }catch(e){
+            return res.status(404).json({msg:`Not found userId: ${userId}`})
+
+        }
     }
 
     deleteUser = (req: Request, res:Response) => {

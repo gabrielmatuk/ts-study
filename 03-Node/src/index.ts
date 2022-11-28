@@ -11,8 +11,8 @@ app.use(router)
 const PORT = 5555
 
 
-app.get('/', (_, res: Response) => {
-    return res.status(200).json({msg: true})
+app.all('*', (_, res: Response) => {
+    return res.status(404).send('Invalid endpoint.')
 })
 
 

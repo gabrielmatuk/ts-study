@@ -1,9 +1,14 @@
 import {Router} from 'express'
+import { LoginController } from './controllers/LoginController'
 import { UserController } from './controllers/UserController'
+import { verifyAuth } from './middleware/verifyAuth'
 
 export const router = Router()
 const userController = new UserController()
+const loginController = new LoginController()
+
+router.post('/login', loginController.login)
 
 router.post('/user', userController.createUser)
-router.get('/user:id', userController.getUser)
+router.get('/user/:userId', verifyAuth,userController.getUser)
 router.delete('/user', userController.deleteUser)

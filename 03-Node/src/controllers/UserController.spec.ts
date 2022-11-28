@@ -1,9 +1,11 @@
 import { UserController } from "./UserController"
 import { makeMockResponse } from "../__mocks__/mockResponse.mock"
 import {Request} from 'express'
+import { makeMockRequest } from "../__mocks__/mockRequest.mock"
 
 const mockUserService = {
-    createUser: jest.fn()
+    createUser: jest.fn(),
+    getUser: jest.fn()
 }
 
 jest.mock('../services/UserService', ()=> {
@@ -77,4 +79,11 @@ describe('User Controller', () => {
         expect(mockResponse.state.json).toMatchObject({error: 'missing params on create user'})
     })
 
+    it('Deve retornar o usuário com o userId informado', () => {
+        const mockRequest = makeMockRequest({params: {userId: '123456'}})
+
+        userController.getUser(mockRequest, mockResponse)
+        expect(mockUserService.getUser).toHaveBeenCalledWith('123456')
+        expect(mockResponse.state.status).toBe(200)
+    })
  })
